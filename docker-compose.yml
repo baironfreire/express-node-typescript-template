@@ -1,0 +1,11 @@
+version: '3.9'
+services:
+  app:
+    image: node:18-alpine
+    user: root
+    volumes:
+      - .:/app
+    working_dir: /app
+    command: sh -c "npm install && npm install -g typescript && npm run start:dev"
+    ports:
+      - "3000:3000"
